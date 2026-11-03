@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wave Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-copy">
+      <h1 id="title" data-i18n="title">波形生成器</h1>
+      <p class="subtitle" id="subtitle" data-i18n="subtitle">生成周期波形并导出 WAV</p>
+    </div>
+    <div class="language-control">
+      <label for="languageSelect" data-i18n="language">语言</label>
+      <select id="languageSelect" aria-label="Language">
+        <option value="zh" selected>中文</option>
+        <option value="ja">日本語</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- 参数选择 -->
+  <div class="card settings-card">
+    <div class="panel">
+      <div class="group">
+        <label id="waveformLabel" data-i18n="waveform">波形</label>
+        <select id="waveform">
+          <option value="sine" data-i18n="sine">正弦波</option>
+          <option value="square" data-i18n="square">方波</option>
+          <option value="triangle" data-i18n="triangle">三角波</option>
+          <option value="sawtooth" selected data-i18n="sawtooth">锯齿波</option>
+          
+        </select>
+      </div>
+
+      <div class="group">
+        <label id="pitchLabel" data-i18n="pitch">音高</label>
+        <div class="pitch-controls">
+          <select id="pitchNote" aria-label="音名"></select>
+          <select id="pitchOctave" aria-label="八度"></select>
+          <span class="pitch-frequency" id="pitchFrequency">293.66 Hz</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 最终处理区：左侧依次设置波动和 Noise，右侧实时显示最终波形 -->
+  <div class="output-workspace">
+    <div class="processing-stack">
+      <div class="card variation-card">
+        <div class="variation-title" data-i18n="variation">波动</div>
+        <div class="variation-row">
+          <label for="periodVariation" data-i18n="periodVariation">周期波动</label>
+          <input type="range" id="periodVariation" min="0" max="1" step="0.1" value="0">
+          <span class="variation-value" id="periodVariationValue">0%</span>
+        </div>
+        <div class="variation-row">
+          <label for="amplitudeVariation" data-i18n="amplitudeVariation">振幅波动</label>
+          <input type="range" id="amplitudeVariation" min="0" max="10" step="0.5" value="0">
+          <span class="variation-value" id="amplitudeVariationValue">0%</span>
+        </div>
+        <div class="variation-actions">
+          <button type="button" id="regenerateVariationBtn" data-i18n="regenerate">重新生成随机变化</button>
+        </div>
+      </div>
+
+      <!-- Noise：作为最后一级处理，在伪周期变化之后叠加到最终声音 -->
+      <div class="card noise-card">
+        <div class="variation-title">Noise</div>
+        <div class="variation-row">
+          <label for="noiseAmount">Noise</label>
+          <input type="range" id="noiseAmount" min="0" max="5" step="0.05" value="0">
+          <span class="variation-value" id="noiseValue">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 最终波形预览：显示周期波动 + 振幅波动 + Noise 后的结果 -->
+    <div class="card preview-card final-preview-card">
+      <div class="preview-title" data-i18n="preview">最终波形预览</div>
+      <canvas id="waveCanvas"></canvas>
+    </div>
+  </div>
+
+  <!-- 控制按钮 -->
+  <div class="controls">
+    <button id="playBtn" data-i18n="play">播放</button>
+    <button id="stopBtn" class="stop" data-i18n="stop">停止</button>
+    <button id="saveBtn" class="save" data-i18n="export">导出 WAV</button>
+  </div>
+
+  <footer class="footer">
+    <div>v0.19 Public: Sine / Square / Triangle / Sawtooth / Variation / Noise</div>
+    <div>Wave Generator · by <strong>itsukiMNE</strong></div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
