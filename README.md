@@ -18,29 +18,42 @@ A lightweight, browser-based waveform generator for creating and exporting WAV a
 
 The default settings are **Sawtooth** at **D4**. The interface opens in **Simplified Chinese**.
 
-## Getting started
+## Use Online (Recommended)
 
-1. Download the files and keep `index.html`, `style.css`, and `script.js` in the same folder.
-2. Open `index.html` in a modern browser.
-3. Choose a waveform and pitch.
-4. Adjust the variation and noise settings as needed.
-5. Use **Play** to listen, **Stop** to stop playback, or **Export WAV** to save the audio.
+**We recommend using the web version**, as it is the easiest way to access the latest updates without downloading files again.
 
-No installation or server setup is required.
+**Web version:** [Open Wave Generator](https://itsukimne.github.io/wave-generator-hf/)
+
+1. Open the web version in your browser.
+2. Choose a waveform and pitch.
+3. Adjust the variation and noise settings as needed.
+4. Use **Play** to listen, **Stop** to stop playback, or **Export WAV** to save the audio.
+
+### Use Locally (Optional)
+
+If you prefer to use the tool offline, download the repository files, keep `index.html`, `style.css`, and `script.js` in the same folder, and open `index.html` in a modern browser. No installation or server setup is required. Downloaded copies will not update automatically.
 
 ## 使用方法（简体中文）
 
-将 `index.html`、`style.css` 和 `script.js` 放在同一文件夹中，用浏览器打开 `index.html` 即可使用。
+**推荐直接使用网页版**，无需下载安装，之后有更新时也可以直接使用最新版本。
 
-选择波形和音高，根据需要调整周期波动、振幅波动和 Noise。可以预览波形、试听声音，并导出 WAV 文件。页面右上角可以切换语言。
+**网页版：** [打开 Wave Generator](https://itsukimne.github.io/wave-generator-hf/)
+
+打开网页后，选择波形和音高，根据需要调整周期波动、振幅波动和 Noise。可以预览波形、试听声音，并导出 WAV 文件。页面右上角可以切换语言。
+
+如果希望离线使用，也可以下载仓库文件，将 `index.html`、`style.css` 和 `script.js` 放在同一文件夹中，再用浏览器打开 `index.html`。下载的版本不会自动更新。
 
 ## 使い方（日本語）
 
-`index.html`、`style.css`、`script.js` を同じフォルダーに保存し、ブラウザーで `index.html` を開いてください。
+**最新版を利用できるWeb版をおすすめします。** ダウンロードやインストールは不要で、今後の更新もWebページから利用できます。
 
-波形と音高を選び、必要に応じて周期・振幅のゆらぎや Noise を調整できます。波形のプレビュー、試聴、WAV ファイルの書き出しに対応しています。画面右上から表示言語を切り替えられます。
+**Web版：** [Wave Generatorを開く](https://itsukimne.github.io/wave-generator-hf/)
 
-## Export format
+Webページを開き、波形と音高を選んでください。必要に応じて周期・振幅のゆらぎやNoiseを調整できます。波形のプレビュー、試聴、WAVファイルの書き出しに対応しています。画面右上から表示言語を切り替えられます。
+
+オフラインで使いたい場合は、`index.html`、`style.css`、`script.js` を同じフォルダーに保存し、ブラウザーで `index.html` を開いてください。ダウンロードしたファイルは自動更新されません。
+
+## Export Format
 
 - Sample rate: **44,100 Hz**
 - Bit depth: **16-bit PCM**
